@@ -1,3 +1,16 @@
+const baseUrl = process.env.API;
+/**
+ * apiFetch
+ *
+ * wrapper around fetch takes method, path, token and [body]
+ *
+ * @param {string} method - GET, POST, PUT or DELETE
+ * @param {string} path - url path
+ * @param {string} token - access_token
+ * @param {Object} body - json body
+ *
+ * @returns {Promise}
+ */
 const apiFetch = (method, path, token, body) => {
   let options = {
     method,
@@ -10,12 +23,15 @@ const apiFetch = (method, path, token, body) => {
     options.body = body;
   }
 
-  return fetch(process.env.API + path, options).then(res => res.json());
+  return fetch(baseUrl + path, options).then(res => res.json());
 };
 
 var index = {
-  name: "api",
+  name: "api_bundle",
   getExtraArgs(store) {
+    if (!store.selectAccessToken) {
+      throw new Error('Access Token Selector Required!')
+    }
     const token = store.selectAccessToken();
     return {
       api: {

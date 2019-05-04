@@ -29,22 +29,23 @@ const apiFetch = (method, path, token, body) => {
 var index = {
   name: "api_bundle",
   getExtraArgs(store) {
-    if (!store.selectAccessToken) {
-      throw new Error('Access Token Selector Required!')
-    }
-    const token = store.selectAccessToken();
     return {
       api: {
         get(path) {
+          const token = store.selectAccessToken();
           return apiFetch("GET", path, token);
         },
         post(path, body) {
+          const token = store.selectAccessToken();
+ 
           return apiFetch("POST", path, token, body);
         },
         put(path, body) {
+          const token = store.selectAccessToken();
           return apiFetch("PUT", path, token, body);
         },
         delete(path) {
+          const token = store.selectAccessToken();
           return apiFetch("DELETE", path, token);
         }
       }

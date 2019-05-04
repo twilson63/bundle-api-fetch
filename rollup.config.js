@@ -24,7 +24,8 @@ export default [{
     resolve(),
     commonjs(),
     replace({
-      'process.env.API': '"https://api-example.com"'
+      'process.env.NODE_ENV': '"production"',
+      'process.env.API': '"https://jsonplaceholder.typicode.com"'
     })
   ]
 }]

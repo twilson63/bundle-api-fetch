@@ -25,6 +25,11 @@ import { api } from 'bundle-api-fetch'
 
 export default composeBundles(api, ...)
 ```
+## Building
+
+```
+yarn build
+```
 
 ## Testing
 
@@ -32,6 +37,11 @@ export default composeBundles(api, ...)
 yarn test
 ```
 
+in browser
+
+```
+yarn test:browser
+```
 
 
 

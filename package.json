@@ -3,7 +3,10 @@
   "main": "index.js",
   "module": "index.mjs",
   "devDependencies": {
-    "@twilson63/mock-fetch": "^1.1.0",
+    "@twilson63/mock-fetch": "^2.0.0",
+    "port-authority": "^1.0.5",
+    "puppeteer": "^1.15.0",
+    "redux-bundler": "^23.1.2",
     "rollup": "^1.11.2",
     "rollup-plugin-commonjs": "^9.3.4",
     "rollup-plugin-node-resolve": "^4.2.3",
@@ -15,6 +18,7 @@
   "scripts": {
     "build": "rollup -c",
     "autobuild": "rollup -cw",
-    "test:browser": "sirv test/public --dev -s"
+    "test:browser": "sirv test/public --dev -s",
+    "test": "node test/runner.js"
   }
 }

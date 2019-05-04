@@ -1,5 +1,7 @@
 {
   "name": "bundle-api-fetch",
+  "description": "fetchify your api calls",
+  "version": "1.0.0",
   "main": "index.js",
   "module": "index.mjs",
   "devDependencies": {
@@ -20,5 +22,8 @@
     "autobuild": "rollup -cw",
     "test:browser": "sirv test/public --dev -s",
     "test": "node test/runner.js"
-  }
+  },
+  "repository": "git@github.com:twilson63/bundle-api-fetch.git",
+  "author": "Tom Wilson <twilson63@gmail.com>",
+  "license": "MIT"
 }
